@@ -98,3 +98,62 @@ plot -vdd#branch
 ```
 ### Now you can able to see the graph for vgs 
 <img width="691" height="545" alt="image" src="https://github.com/user-attachments/assets/5479ec37-c25f-45ac-9081-bef5a3981f40" />
+## CMOS Voltage-Transfer Characteristics
+
+- It defines the delays of the cells
+- This helps us to derive the delay for a perticular cell.
+
+**MOSFET as a Switch:**
+NMOS: + Vgs and + Vt
+PMOS: - Vgs and - Vt
+ - OFF State:
+   - The MOSFET behaves as an open switch (infinite OFF resistance) when:
+   - |Vgs| < |Vt|
+
+ - ON State:
+   - The MOSFET behaves as a closed switch (finite ON resistance) when:
+   - |Vgs| > |Vt|
+
+<img width="903" height="521" alt="image" src="https://github.com/user-attachments/assets/36a25016-81da-4700-be61-7daf19a6eb74" />
+
+---
+
+### Introduction to standard MOS voltage current parameters
+ 
+<img width="1273" height="464" alt="image" src="https://github.com/user-attachments/assets/a3e356cd-b0e9-47ff-a885-689317693c4e" />
+
+- The left diagram shows a CMOS inverter at the transistor level: the PMOS transistor is connected to Vdd, the NMOS transistor is connected to Vss, and Vin is applied to both gates. The output Vout is taken from the common drain node, with CL representing the load capacitance.
+
+- The middle diagram illustrates the switch model when Vin = Vdd: the NMOS transistor is ON (acting as a resistor Rn), while the PMOS is OFF (open switch), resulting in Vout = 0.
+     - When Vin = Vdd → Vout = 0 (NMOS ON, PMOS OFF).
+     - This is due to when the capacitor fully charges and then a direct path exists from capacitor to the NMOS due to the discharging of capacitor(CL).
+
+- The right diagram shows the switch model when Vin = 0: the PMOS transistor is ON (acting as a resistor Rp), while the NMOS is OFF (open switch), producing Vout = Vdd.
+     - When Vin = 0 → Vout = Vdd (PMOS ON, NMOS OFF).
+     - Due to the charging effect made by the PMOS, the Vout = Vdd.
+
+---
+
+### Load Line Curves for NMOS and PMOS
+
+Convert the PMOS gate-source voltage (VgsP) into an equivalent Vin and plot to the load voltage transfer characteristic.
+By this, we can able to identifies the delays.
+Replace all internal node voltages with Vin, Vdd, Vss, and Vout.
+
+<img width="1395" height="707" alt="image" src="https://github.com/user-attachments/assets/e726712f-7cc2-4448-81df-ee2ecadb4fce" />
+
+Convert PMOS and NMOS drain-source voltages to Vout.
+
+- Obtain the Load Curve for PMOS Transistor
+  
+<img width="1382" height="729" alt="image" src="https://github.com/user-attachments/assets/881f60e0-cf3b-4d40-8c1c-938e67989123" />
+
+From the load curve, we can able to observe that the capacitor is completely discharged so that Vout = 0.
+
+- Obtain the Load Curve for NMOS Transistor
+
+<img width="970" height="734" alt="image" src="https://github.com/user-attachments/assets/c7b85db2-6c75-46c9-b1ce-2ae698b122d6" />
+
+### Merge PMOS – NMOS load curves and plot VTC
+
+<img width="1376" height="733" alt="image" src="https://github.com/user-attachments/assets/0344e3d9-87bd-4ed8-a998-dce112f1f2d5" />
